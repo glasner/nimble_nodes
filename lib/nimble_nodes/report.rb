@@ -1,9 +1,9 @@
 module NimbleNodes
       
   class Report
-    def initializer(request)
-      @dynos_in_use = request.headers['HTTP_X_HEROKU_DYNOS_IN_USE']
-      @request_queue_depth = request.headers['HTTP_X_HEROKU_QUEUE_DEPTH']
+    def initializer(env)
+      @dynos_in_use = env['HTTP_X_HEROKU_DYNOS_IN_USE']
+      @request_queue_depth = env['HTTP_X_HEROKU_QUEUE_DEPTH']
     end
     
     def post
