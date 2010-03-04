@@ -1,17 +1,24 @@
-= nimble_nodes
+= NimbleNodes
 
-Description goes here.
+Automatic scaling for Heroku Dynos (and Delayed Job Workers coming soon). See http://nimblenodes.com for more information.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+Rack middleware sits on top of all requests and watches the number of Dynos in use and the size of the RequestQueue. Depending on the settings entered at http://nimblenodes.com reports are posted over to the server. The server then calculates the needed adjustments and  handles all communications with Heroku.
+
+== Installation
+
+=== Install gem
+
+sudo gem install nimble_nodes
+
+=== Rails installation
+
+In config/enviroment.rb
+
+config.gem 'nimble_nodes'
+config.middleware.use NimbleNodes::Middleware
+
+ENV['NN_TOKEN'] = 'api_token_for_app'
 
 == Copyright
 
-Copyright (c) 2010 Jordan Glasner. See LICENSE for details.
+Copyright (c) 2010 Cotillion, LLC. See LICENSE for details.
