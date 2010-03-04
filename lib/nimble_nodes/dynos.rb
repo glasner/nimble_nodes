@@ -3,7 +3,7 @@ module NimbleNodes
   module Dynos
     
     def self.max
-      ENV['NN_DYNO_POOL_MAX']
+      ENV['NN_DYNOS_POOL_MAX']
     end
     
     def self.max_request_queue
