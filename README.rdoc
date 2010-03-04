@@ -1,4 +1,4 @@
-= NimbleNodes
+= Coming Soon: NimbleNodes
 
 Automatic scaling for Heroku Dynos (and Delayed Job Workers coming soon). See http://nimblenodes.com for more information.
 

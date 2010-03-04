@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "nimble_nodes"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "gem for connecting apps to the NimbleNodes server"
+    gem.description = "automatically scales dynos and workers at Heroku"
     gem.email = "jordan@digitalignition.com"
     gem.homepage = "http://github.com/glasner/nimble_nodes"
     gem.authors = ["Jordan Glasner"]
