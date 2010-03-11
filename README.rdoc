@@ -17,7 +17,6 @@ In config/enviroment.rb
 config.gem 'nimble_nodes'
 config.middleware.use NimbleNodes::Middleware
 
-ENV['NN_TOKEN'] = 'api_token_for_app'
 
 == Copyright
 
