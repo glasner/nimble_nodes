@@ -9,7 +9,7 @@ module NimbleNodes
     
     def initialize(env)
       @dynos_in_use = env['HTTP_X_HEROKU_DYNOS_IN_USE']
-      @request_queue_depth = env['HTTP_X_HEROKU_QUEUE_DEPTH']
+      @request_queue_depth = env['HTTP_X_HEROKU_QUEUE_DEPTH'] 
     end
     
     def post
@@ -20,6 +20,7 @@ module NimbleNodes
     end
     
     def post?
+      return false if ENV['NN_APP_PAUSED_AT']
       dynos_maxed_out? or queue_depth_too_long? or unused_dynos?
     end
     
