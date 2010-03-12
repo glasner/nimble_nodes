@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{nimble_nodes}
-  s.version = "0.1.3"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jordan Glasner"]
-  s.date = %q{2010-03-03}
+  s.date = %q{2010-03-11}
   s.description = %q{automatically scales dynos and workers at Heroku}
   s.email = %q{jordan@digitalignition.com}
   s.extra_rdoc_files = [
@@ -25,9 +25,11 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/nimble_nodes.rb",
      "lib/nimble_nodes/dynos.rb",
+     "lib/nimble_nodes/filter.rb",
      "lib/nimble_nodes/middleware.rb",
      "lib/nimble_nodes/report.rb",
      "lib/nimble_nodes/server.rb",
+     "nimble_nodes.gemspec",
      "test/helper.rb",
      "test/test_nimble_nodes.rb"
   ]

@@ -15,7 +15,7 @@ module NimbleNodes
   #= Monitoring
   # pass over the hash containing Rack env variables
   # a Report will be created and posted if neccessary 
-  def monitor(env)
+  def self.monitor(env)
     report = NimbleNodes::Report.new(env)
     report.post if report.post?
   end
