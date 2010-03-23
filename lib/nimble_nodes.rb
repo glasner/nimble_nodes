@@ -20,6 +20,14 @@ module NimbleNodes
     report.post if report.post?
   end
   
+  def self.installed?
+    not ENV['NN_SERVER_DOMAIN'].nil?
+  end
+  
+  def self.paused?
+    not ENV['NN_APP_PAUSED_AT'].nil?
+  end
+  
 end
 
 NimbleNodes.files.each { |file| require File.dirname(__FILE__) + "/nimble_nodes/#{file}" }
