@@ -20,8 +20,9 @@ module NimbleNodes
     end
     
     def post?
+      return false unless NimbleNodes.installed?
       return true
-      return false if ENV['NN_APP_PAUSED_AT']
+      return false if NimbleNodes.paused?
       dynos_maxed_out? or queue_depth_too_long? or unused_dynos?
     end
     
