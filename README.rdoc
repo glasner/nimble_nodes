@@ -4,20 +4,31 @@ Automatic scaling for Heroku Dynos (and Delayed Job Workers coming soon). See ht
 
 Rack middleware sits on top of all requests and watches the number of Dynos in use and the size of the RequestQueue. Depending on the settings entered at http://nimblenodes.com reports are posted over to the server. The server then calculates the needed adjustments and  handles all communications with Heroku.
 
-== Installation
+= Installation
 
-=== Install gem
+== Install gem
 
 sudo gem install nimble_nodes
 
-=== Rails installation
+== Rails installation
 
 In config/enviroment.rb
 
 config.gem 'nimble_nodes'
-config.middleware.use NimbleNodes::Middleware
+
+=== Rails 2.3
+
+In config/initializers/nimble_nodes.rb
+
+ActionController::Dispatcher.middleware.use(NimbleNodes::Middleware) 
+
+=== Previous Rails Versions
+
+In app/controllers/application_controller.rb
+
+before_filter :monitor_heroku_app
 
 
-== Copyright
+= Copyright
 
 Copyright (c) 2010 Cotillion, LLC. See LICENSE for details.
