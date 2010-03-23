@@ -12,7 +12,7 @@ module NimbleNodes
     end
     
     def self.url_to(path)
-      ENV['NN_SERVER_DOMAIN'] + path
+      'http://' + ENV['NN_SERVER_DOMAIN'] + path
       # 'http://nimblenodes.com' + path
     end
     
