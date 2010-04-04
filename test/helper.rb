@@ -1,10 +1,11 @@
 require 'rubygems'
 require 'test/unit'
-require 'shoulda'
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'nimble_nodes'
+require 'shoulda'
+require 'mocha'
+require 'fakeweb'
+
+require File.expand_path(File.dirname(__FILE__)) + '/../lib/nimble_nodes'
 
 class Test::Unit::TestCase
 end
