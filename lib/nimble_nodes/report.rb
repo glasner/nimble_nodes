@@ -16,7 +16,7 @@ module NimbleNodes
     
     # returns true if report needs to be posted to server
     def post?
-      return true
+      # return true
       dynos_maxed_out? or queue_depth_too_long? or queue_depth_too_short? or idle_dynos?
     end
     
