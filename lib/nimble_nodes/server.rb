@@ -10,7 +10,7 @@ module NimbleNodes
     def self.get(path)   
       begin
         path = NimbleNodes::App.path(path)
-        uri = uri_with_token(path)     
+        uri = NimbleNodes::Server.uri_with_token(path)     
         path = uri.route_from(NimbleNodes::Server.url[0..-2]).to_s
         request = Net::HTTP::Get.new(path)
         return Net::HTTP.start(uri.host, uri.port) {|http| http.request(request)}.body
