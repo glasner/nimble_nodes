@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{nimble_nodes}
-  s.version = "0.1.9"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jordan Glasner"]
-  s.date = %q{2010-03-23}
-  s.description = %q{automatically scales dynos and workers at Heroku}
+  s.date = %q{2010-04-04}
+  s.description = %q{coming soon}
   s.email = %q{jordan@digitalignition.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -24,23 +24,32 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/nimble_nodes.rb",
+     "lib/nimble_nodes/app.rb",
      "lib/nimble_nodes/dynos.rb",
-     "lib/nimble_nodes/filter.rb",
      "lib/nimble_nodes/middleware.rb",
+     "lib/nimble_nodes/rails/filter.rb",
      "lib/nimble_nodes/report.rb",
      "lib/nimble_nodes/server.rb",
+     "lib/nimble_nodes/settings.rb",
+     "lib/nimble_nodes/workers.rb",
      "nimble_nodes.gemspec",
      "test/helper.rb",
-     "test/test_nimble_nodes.rb"
+     "test/unit/test_app.rb",
+     "test/unit/test_dynos.rb",
+     "test/unit/test_nimble_nodes.rb",
+     "test/unit/test_settings.rb"
   ]
   s.homepage = %q{http://github.com/glasner/nimble_nodes}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{gem for connecting apps to the NimbleNodes server}
+  s.summary = %q{coming soon}
   s.test_files = [
     "test/helper.rb",
-     "test/test_nimble_nodes.rb"
+     "test/unit/test_app.rb",
+     "test/unit/test_dynos.rb",
+     "test/unit/test_nimble_nodes.rb",
+     "test/unit/test_settings.rb"
   ]
 
   if s.respond_to? :specification_version then
@@ -49,11 +58,20 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+      s.add_development_dependency(%q<mocha>, [">= 0"])
+      s.add_development_dependency(%q<fakeweb>, [">= 0"])
+      s.add_runtime_dependency(%q<json>, [">= 0"])
     else
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+      s.add_dependency(%q<mocha>, [">= 0"])
+      s.add_dependency(%q<fakeweb>, [">= 0"])
+      s.add_dependency(%q<json>, [">= 0"])
     end
   else
     s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+    s.add_dependency(%q<mocha>, [">= 0"])
+    s.add_dependency(%q<fakeweb>, [">= 0"])
+    s.add_dependency(%q<json>, [">= 0"])
   end
 end
 
