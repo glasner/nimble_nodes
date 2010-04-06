@@ -31,10 +31,7 @@ class TestDynos < Test::Unit::TestCase
     context "App setup at NimbleNodes" do
       
       setup { 
-        NimbleNodes::App.stubs({
-          :name => 'nimble-nodes-test',
-          :token => 'token'
-        })
+        setup_installed_app
          @module.stubs(:settings).returns({
             'paused_at' => nil,
             'min' => 1,
