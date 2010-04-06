@@ -5,12 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "nimble_nodes"
-    gem.summary = "coming soon"
-    gem.description = "coming soon"
+    gem.summary = "Connect your Heroku app to http://nimblenodes.com and automatically scale your Dynos to demand"
+    gem.description = "Scale your Heroku Dynos to demand at http://nimblenodes.com"
     gem.email = "jordan@digitalignition.com"
-    gem.homepage = "http://github.com/glasner/nimble_nodes"
+    gem.homepage = "http://nimblenodes.com"
     gem.authors = ["Jordan Glasner"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_development_dependency "shoulda", ">= 0"
     gem.add_development_dependency "mocha"
     gem.add_development_dependency "fakeweb"
     gem.add_dependency "json"
