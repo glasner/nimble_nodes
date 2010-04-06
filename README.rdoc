@@ -1,8 +1,10 @@
-= Coming Soon: NimbleNodes
+= Client Gem for NimbleNodes.com Subscribers
 
-Automatic scaling for Heroku Dynos (and Delayed Job Workers coming soon). See http://nimblenodes.com for more information.
+Scale your Heroku app's dynos according to demand. 
 
-Rack middleware sits on top of all requests and watches the number of Dynos in use and the size of the RequestQueue. Depending on the settings entered at http://nimblenodes.com reports are posted over to the server. The server then calculates the needed adjustments and  handles all communications with Heroku.
+Rack middleware sits on top of all requests and watches the number of Dynos in use and the number of pending requests. Depending on the settings entered at http://nimblenodes.com/my/dynos JSON reports are posted over to the server. The server then calculates the needed adjustments and handles all communications with Heroku.
+
+See http://nimblenodes.com for more information.
 
 = Installation
 
@@ -16,18 +18,21 @@ In config/enviroment.rb
 
 config.gem 'nimble_nodes'
 
-=== Rails 2.3
+=== Rails >= 2.3
 
 In config/initializers/nimble_nodes.rb
 
 ActionController::Dispatcher.middleware.use(NimbleNodes::Middleware) 
 
-=== Previous Rails Versions
+=== Rails < 2.3
 
 In app/controllers/application_controller.rb
 
 before_filter :monitor_heroku_app
 
+== Other Rack Apps
+
+All other Rack based apps *should* work using the NimbleNodes::Middleware. Please let us know if you need help getting it to work w/ a specific framework.
 
 = Copyright
 
